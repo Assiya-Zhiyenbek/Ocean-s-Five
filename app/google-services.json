@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "827410402929",
+    "firebase_url": "https://bankapp-f4fe6.firebaseio.com",
+    "project_id": "bankapp-f4fe6",
+    "storage_bucket": "bankapp-f4fe6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827410402929:android:34f46b4c7ebeb31b00d5d0",
+        "android_client_info": {
+          "package_name": "com.qcb.financemanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "827410402929-04ce1q5u6dbmivjke394mc0vbs52782s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuvBWLZ2e7NTGWKaqv8t9Vh1L4QF-rgbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "827410402929-04ce1q5u6dbmivjke394mc0vbs52782s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
