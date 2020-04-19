@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,6 +30,7 @@ public class MyBankActivity extends AppCompatActivity {
 
     private FirebaseFirestore db;
     private DocumentReference docRefforAccount;
+    private CollectionReference accounts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MyBankActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mybank);
 
         db = FirebaseFirestore.getInstance();
+        accounts = db.collection("accounts");
 
         Intent intent = getIntent();
 
@@ -49,14 +52,13 @@ public class MyBankActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String id = account_ID.getText().toString();
                 System.out.println("ID is: " + id);
-                docRefforAccount = db.collection("accounts").document(id);
+                docRefforAccount = accounts.document(id);
                 docRefforAccount.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                         if (task.isSuccessful()) {
                             DocumentSnapshot document = task.getResult();
-
 
                             if (document.exists()) {
                                 Log.d(TAG, "DocumentSnapshot data: " + document.getData());
