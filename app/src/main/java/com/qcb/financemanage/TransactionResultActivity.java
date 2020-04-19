@@ -14,9 +14,12 @@ public class TransactionResultActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_transactions);
+        setContentView(R.layout.activity_transaction_results);
 
         Intent intent = getIntent();
+//        String sID = intent.getStringExtra("SENDER_ACCOUNT_ID");
+//        String rID = intent.getStringExtra("RECEIVER_ACCOUNT_ID");
+//        String money
 
 
 

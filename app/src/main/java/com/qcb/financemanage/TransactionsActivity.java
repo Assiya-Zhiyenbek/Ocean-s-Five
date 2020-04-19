@@ -36,6 +36,7 @@ public class TransactionsActivity extends AppCompatActivity {
     private final Long[] receiverBalance = new Long[1];
     private final Long[] senderBalance = new Long[1];
     private final Long[] balances = new Long[2];
+    private final Account[] SenderReceiverAccounts = new Account[2];
 
 
     public static final String TAG = "Firebase Tag";
@@ -56,6 +57,8 @@ public class TransactionsActivity extends AppCompatActivity {
         //receiverAccount = db.collection("accounts").document(reveiver_ID);
 
         btn_transfer = findViewById(R.id.btn_trans);
+
+        // TODO: IMPLEMENT A CASE WITH UNSUCCESSFUL TRANSACTIONS
 
         btn_transfer.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,8 +86,8 @@ public class TransactionsActivity extends AppCompatActivity {
                         for(DocumentSnapshot documentSnapshot : querySnapshots) {
                             Long currentBalance = documentSnapshot.getLong("balance");
                             balances[i] = currentBalance;
+                            SenderReceiverAccounts[i] = documentSnapshot.toObject(Account.class);
                             i++;
-                            //Log.e(TAG, "SENDER BALANCE IS: " + sendBal);
                         }
                         Log.e(TAG, "SENDER BALANCE IS: " + balances[0]);
                         Log.e(TAG, "Receiver BALANCE IS: " + balances[1]);
@@ -97,80 +100,21 @@ public class TransactionsActivity extends AppCompatActivity {
 
                         Task task3 = senderAccount.update("balance", balances[0]);
                         Task task4 = receiverAccount.update("balance", balances[1]);
+
                         Task allFinalTasks = Tasks.whenAllSuccess(task3, task4);
                         allFinalTasks.addOnSuccessListener(new OnSuccessListener() {
                             @Override
                             public void onSuccess(Object o) {
-                                Log.e(TAG, "This thing is SUCCESSFUL!!!!!");
+                                Intent intent = new Intent(getApplicationContext(), TransactionResultActivity.class);
+//                                intent.putExtra("SENDER_ACCOUNT_ID", SenderReceiverAccounts[0].getAccount_id());
+//                                intent.putExtra("RECEIVER_ACCOUNT_ID", SenderReceiverAccounts[1].getAccount_id());
+//                                intent.putExtra("MONEY_TO_TRANSFER", moneyAmountToTransfer);
+                                startActivity(intent);
                             }
                         });
 
                     }
                 });
-//                /* Get data from the sender Account */
-//                senderAccount.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            DocumentSnapshot document = task.getResult();
-//
-//
-//
-//
-//                            if (document.exists()) {
-//                                senderBalance[0] = document.getLong("balance");
-//                                Log.e(TAG, "(1) Sender balance is: " + senderBalance[0]);
-//
-//
-//
-//                                receiverAccount.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                                        if(task.isSuccessful()){
-//                                            DocumentSnapshot document = task.getResult();
-//
-//
-//                                            receiverBalance[0] =  document.getLong("balance");
-//                                            Log.e(TAG, "(1) Receiver balance is: " + receiverBalance[0]);
-//
-//                                            if(document.exists()){
-//
-//                                            }
-//                                        }
-//                                    }
-//                                });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
-//                            } else {
-//                                Toast.makeText(TransactionsActivity.this, "Invalid Sender ID", Toast.LENGTH_LONG).show();
-//                                Log.e(TAG, "Document does not exist");
-//                            }
-//                        } else {
-//                            Log.e(TAG, "get failed with ", task.getException());
-//                        }
-//                    }
-//                });
-
-                //Log.e(TAG, "(2) Sender balance is: " + senderBalance[0]);
-
-//                getBalance(senderAccount, "Sender");
-//                getBalance(receiverAccount, "Receiver");
-//
-//                Log.e(TAG, "Sender balance is: " + senderBalance[0]);
-//                Log.e(TAG, "Receiver balance is: " + receiverBalance[0]);
-
-
-//                Intent intent = new Intent(getApplicationContext(), TransactionResultActivity.class);
-//                startActivity(intent);
             }
         });
     }
