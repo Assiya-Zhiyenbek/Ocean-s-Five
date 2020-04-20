@@ -5,13 +5,126 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Придумайте шо нибудь"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Придумайте шо нибудь"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_food" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Придумайте шо нибудь"
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pay_food"
+        app:layout_constraintTop_toBottomOf="@+id/pay_credits" />
+
+    <Button
+        android:id="@+id/pay_food"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Food"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintEnd_toStartOf="@+id/button8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_games" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="112dp"
-        android:text="You dont have any payments"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="27dp"
+        android:text="Choose an Option"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/pay_kommunalka"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Kommunalka"
+        app:layout_constraintBottom_toTopOf="@+id/pay_fines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pay_telephone"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/pay_telephone"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:background="#FF5722"
+        android:text="@string/mobile"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/pay_internet"
+        app:layout_constraintEnd_toStartOf="@+id/pay_kommunalka"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/pay_internet"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Internet"
+        app:layout_constraintBottom_toTopOf="@+id/pay_games"
+        app:layout_constraintEnd_toStartOf="@+id/pay_fines"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_telephone" />
+
+    <Button
+        android:id="@+id/pay_fines"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Fines"
+        app:layout_constraintBottom_toTopOf="@+id/pay_credits"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pay_internet"
+        app:layout_constraintTop_toBottomOf="@+id/pay_kommunalka" />
+
+    <Button
+        android:id="@+id/pay_games"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Games"
+        app:layout_constraintBottom_toTopOf="@+id/pay_food"
+        app:layout_constraintEnd_toStartOf="@+id/pay_credits"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pay_internet" />
+
+    <Button
+        android:id="@+id/pay_credits"
+        android:layout_width="133dp"
+        android:layout_height="85dp"
+        android:text="Credits"
+        app:layout_constraintBottom_toTopOf="@+id/button8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pay_games"
+        app:layout_constraintTop_toBottomOf="@+id/pay_fines" />
 </androidx.constraintlayout.widget.ConstraintLayout>

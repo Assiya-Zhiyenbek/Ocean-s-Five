@@ -52,7 +52,10 @@ public class MainActivity extends AppCompatActivity {
         payments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PaymentsActivity.class);
+
+                // Here we go to the "payments" screen, but we need to perform an authorization first.
+                Intent intent = new Intent(getApplicationContext(), Authorization.class);
+                intent.putExtra("DESTINATION", "PaymentActivity");
                 startActivity(intent);
             }
         });

@@ -61,7 +61,7 @@ public class MyBankActivity extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
 
                             if (document.exists()) {
-                                Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                                //Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                                 Account currentAccount = document.toObject(Account.class);
                                 data.setText("Account id: " + currentAccount.getAccount_id() + "\n" +
                                                 "Account name: " + currentAccount.getAccount_name() + "\n" +
