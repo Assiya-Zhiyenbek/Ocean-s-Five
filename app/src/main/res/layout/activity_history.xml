@@ -5,13 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="338dp"
-        android:text="Your history is empty, HAHAHA"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Button
+        android:id="@+id/btn_history_transactions"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="134dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="3dp"
+        android:background="@color/colorPrimary"
+        android:text="Transactions"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toStartOf="@+id/btn_history_payments"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_history_payments"
+        android:layout_width="146dp"
+        android:layout_height="83dp"
+        android:background="@color/colorPrimary"
+        android:text="Payments"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_history_transactions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_history_transactions" />
 </androidx.constraintlayout.widget.ConstraintLayout>

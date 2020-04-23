@@ -60,10 +60,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Open Authorization Page for the history
         history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), HistoryActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Authorization.class);
+                intent.putExtra("DESTINATION", "HistoryActivity");
                 startActivity(intent);
             }
         });
@@ -71,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
         transactions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), TransactionsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), Authorization.class);
+                intent.putExtra("DESTINATION", "TransactionsActivity");
                 startActivity(intent);
             }
         });

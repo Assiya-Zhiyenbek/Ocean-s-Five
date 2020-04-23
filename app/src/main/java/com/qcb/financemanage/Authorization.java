@@ -41,6 +41,10 @@ public class Authorization extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), PaymentsActivity.class);
                     intent.putExtra("Account_ID", accID);
                     startActivity(intent);
+                } else if (destinationActivity.equals("HistoryActivity")){
+                    Intent intent = new Intent(getApplicationContext(), HistoryActivity.class);
+                    intent.putExtra("Account_ID", accID);
+                    startActivity(intent);
                 }
 
 
