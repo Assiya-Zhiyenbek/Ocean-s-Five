@@ -10,13 +10,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="215dp"
-        android:layout_height="66dp"
+        android:layout_width="204dp"
+        android:layout_height="37dp"
         android:layout_marginTop="16dp"
+        android:layout_marginBottom="431dp"
         android:text="Welcome, username!"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/piggy_bank"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,8 +29,11 @@
         android:layout_height="110dp"
         android:background="@drawable/btn_shape"
         android:text="Transactions"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_history"
+        app:layout_constraintEnd_toStartOf="@+id/btn_payments"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btn_mybank"
@@ -36,8 +41,10 @@
         android:layout_height="110dp"
         android:background="@drawable/btn_shape"
         android:text="My Bank"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintBottom_toTopOf="@+id/piggy_bank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_history"
+        app:layout_constraintTop_toBottomOf="@+id/btn_payments" />
 
     <Button
         android:id="@+id/btn_history"
@@ -45,8 +52,10 @@
         android:layout_height="110dp"
         android:background="@drawable/btn_shape"
         android:text="History"
-        tools:layout_editor_absoluteX="64dp"
-        tools:layout_editor_absoluteY="305dp" />
+        app:layout_constraintBottom_toTopOf="@+id/piggy_bank"
+        app:layout_constraintEnd_toStartOf="@+id/btn_mybank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_transactions" />
 
     <Button
         android:id="@+id/btn_payments"
@@ -54,16 +63,23 @@
         android:layout_height="110dp"
         android:background="@drawable/btn_shape"
         android:text="Payments"
-        tools:layout_editor_absoluteX="238dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btn_mybank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_transactions"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/piggy_bank"
-        android:layout_width="104dp"
-        android:layout_height="100dp"
-        android:background="@color/colorPrimary"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/btn_shape"
+        android:radius="50dp"
         android:text="piggy bank"
-        tools:layout_editor_absoluteX="153dp"
-        tools:layout_editor_absoluteY="499dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

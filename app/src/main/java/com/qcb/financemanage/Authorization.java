@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.qcb.financemanage.piggybank.PiggyBank;
+
 public class Authorization extends AppCompatActivity {
 
     private EditText accIDField;
@@ -47,6 +49,10 @@ public class Authorization extends AppCompatActivity {
                     startActivity(intent);
                 } else if (destinationActivity.equals("TransactionsActivity")) {
                     Intent intent = new Intent(getApplicationContext(), TransactionsActivity.class);
+                    intent.putExtra("Account_ID", accID);
+                    startActivity(intent);
+                } else if (destinationActivity.equals("PiggyBankActivity")) {
+                    Intent intent = new Intent(getApplicationContext(), PiggyBank.class);
                     intent.putExtra("Account_ID", accID);
                     startActivity(intent);
                 }

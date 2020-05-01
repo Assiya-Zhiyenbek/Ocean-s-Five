@@ -21,7 +21,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button payments, transactions, history, myBank;
+    Button payments, transactions, history, myBank, piggybank;
 
 
     @Override
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         payments = findViewById(R.id.btn_payments);
         history = findViewById(R.id.btn_history);
         transactions = findViewById(R.id.btn_transactions);
+        piggybank = findViewById(R.id.piggy_bank);
 
 
         myBank.setOnClickListener(new View.OnClickListener() {
@@ -88,6 +89,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Authorization.class);
                 intent.putExtra("DESTINATION", "TransactionsActivity");
+                startActivity(intent);
+            }
+        });
+
+        piggybank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Authorization.class);
+                intent.putExtra("DESTINATION", "PiggyBankActivity");
                 startActivity(intent);
             }
         });

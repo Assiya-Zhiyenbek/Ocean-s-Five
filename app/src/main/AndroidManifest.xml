@@ -167,6 +167,29 @@
                 android:value=".payments.MobilePaymentTransaction" />
 
         </activity>
+
+        <!-- =================================== PIGGY BANK STUFF ================================= -->
+        <activity android:name=".piggybank.PiggyBank"
+            android:parentActivityName=".Authorization">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Authorization" />
+
+        </activity>
+        <activity android:name=".piggybank.MyWish"
+            android:parentActivityName=".piggybank.PiggyBank">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".piggybank.PiggyBank" />
+
+        </activity>
+
+
+
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
