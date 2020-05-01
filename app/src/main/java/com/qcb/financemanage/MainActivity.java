@@ -9,10 +9,15 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        Date date = new Date();
+        Log.e("DATE is:", date.toString());
+
+        long DAY_IN_MS = 1000 * 60 * 60 * 24;
+        Date weekago = new Date(System.currentTimeMillis() - (7 * DAY_IN_MS));
+        Log.e("DATE WEEK ago is:", weekago.toString());
+        Log.e("Exact day week age is:", String.valueOf(getDayAndMonth(weekago)));
 
 //        FloatingActionButton fab = findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -100,5 +113,12 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public String getDayAndMonth(Date date){
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String requiredDate = df.format(date).toString();
+        String[] parts = requiredDate.split("/");
+        return parts[0] + '.' + parts[1];
     }
 }

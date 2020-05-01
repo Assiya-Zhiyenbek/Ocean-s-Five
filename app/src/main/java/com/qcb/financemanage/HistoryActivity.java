@@ -13,6 +13,7 @@ import com.qcb.financemanage.history.TransactionsHistoryMain;
 public class HistoryActivity extends AppCompatActivity {
 
     private Button btn_transaction, btn_payments;
+    private String accID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,26 +21,29 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         Intent intent = getIntent();
+        accID = intent.getStringExtra("Account_ID");
 
         btn_transaction = findViewById(R.id.btn_history_transactions);
         btn_payments = findViewById(R.id.btn_history_payments);
 
-        // TODO: add user ID to the intent
+
         btn_transaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), TransactionsHistoryMain.class);
                 //intent.putExtra("DESTINATION", "PaymentActivity");
+                intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
         });
 
-        // TODO: add user ID to the intent
+
         btn_payments.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), PaymentsHistoryMain.class);
                 //intent.putExtra("DESTINATION", "PaymentActivity");
+                intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
         });
