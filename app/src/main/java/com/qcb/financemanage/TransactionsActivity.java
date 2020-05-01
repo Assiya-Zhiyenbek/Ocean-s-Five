@@ -106,9 +106,11 @@ public class TransactionsActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Object o) {
                                 Intent intent = new Intent(getApplicationContext(), TransactionResultActivity.class);
-//                                intent.putExtra("SENDER_ACCOUNT_ID", SenderReceiverAccounts[0].getAccount_id());
-//                                intent.putExtra("RECEIVER_ACCOUNT_ID", SenderReceiverAccounts[1].getAccount_id());
-//                                intent.putExtra("MONEY_TO_TRANSFER", moneyAmountToTransfer);
+                                intent.putExtra("SENDER_ACCOUNT_ID", SenderReceiverAccounts[0].getAccount_id());
+                                intent.putExtra("RECEIVER_ACCOUNT_ID", SenderReceiverAccounts[1].getAccount_id());
+                                intent.putExtra("MONEY_TO_TRANSFER", moneyAmountToTransfer);
+
+                                //Log.e("MONEY AMOUN TRACTIVITY", "MONEY AMOUNT IS: " + moneyAmountToTransfer);
                                 startActivity(intent);
                             }
                         });

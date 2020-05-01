@@ -8,6 +8,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.qcb.financemanage.payments.CommunalePaymentActivity;
+import com.qcb.financemanage.payments.CreditsPaymentActivity;
+import com.qcb.financemanage.payments.FoodPaymentsActivity;
+import com.qcb.financemanage.payments.GamesPaymentActivity;
+import com.qcb.financemanage.payments.InternetPaymentsACtivity;
 import com.qcb.financemanage.payments.MobilePaymentActivity;
 
 public class PaymentsActivity extends AppCompatActivity {
@@ -28,7 +33,6 @@ public class PaymentsActivity extends AppCompatActivity {
         mobile = findViewById(R.id.pay_telephone);
         communale = findViewById(R.id.pay_kommunalka);
         internet = findViewById(R.id.pay_internet);
-        fines = findViewById(R.id.pay_fines);
         games = findViewById(R.id.pay_games);
         credits = findViewById(R.id.pay_credits);
         food = findViewById(R.id.pay_food);
@@ -40,6 +44,66 @@ public class PaymentsActivity extends AppCompatActivity {
 
                 // Passing Account ID through Activities;
                 Intent intent = new Intent(getApplicationContext(), MobilePaymentActivity.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        communale.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Passing Account ID through Activities;
+                Intent intent = new Intent(getApplicationContext(), CommunalePaymentActivity.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        internet.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Passing Account ID through Activities;
+                Intent intent = new Intent(getApplicationContext(), InternetPaymentsACtivity.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        games.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Passing Account ID through Activities;
+                Intent intent = new Intent(getApplicationContext(), GamesPaymentActivity.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        credits.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Passing Account ID through Activities;
+                Intent intent = new Intent(getApplicationContext(), CreditsPaymentActivity.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        food.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                // Passing Account ID through Activities;
+                Intent intent = new Intent(getApplicationContext(), FoodPaymentsActivity.class);
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
