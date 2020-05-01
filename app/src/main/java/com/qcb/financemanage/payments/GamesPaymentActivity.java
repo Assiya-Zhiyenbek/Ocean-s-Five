@@ -26,13 +26,14 @@ public class GamesPaymentActivity extends AppCompatActivity {
         minecraft = findViewById(R.id.btn_minecraft);
         cookie_clicker = findViewById(R.id.btn_cookie_clicker);
 
-        final Intent next_intent = new Intent(getApplicationContext(), MobilePaymentTransaction.class);
+        final Intent next_intent = new Intent(getApplicationContext(), GamesPaymentTransaction.class);
         next_intent.putExtra("Account_ID", accID);
 
         minecraft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                next_intent.putExtra("GAME", "MINECRAFT");
+                startActivity(next_intent);
 
             }
         });
@@ -40,7 +41,8 @@ public class GamesPaymentActivity extends AppCompatActivity {
         cookie_clicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                next_intent.putExtra("GAME", "COOKIE CLICKER");
+                startActivity(next_intent);
 
             }
         });

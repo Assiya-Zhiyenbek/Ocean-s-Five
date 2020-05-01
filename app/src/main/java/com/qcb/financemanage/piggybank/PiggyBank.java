@@ -9,7 +9,6 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qcb.financemanage.PaymentsActivity;
 import com.qcb.financemanage.R;
 
 public class PiggyBank extends AppCompatActivity {
@@ -29,12 +28,21 @@ public class PiggyBank extends AppCompatActivity {
 
         addWish = findViewById(R.id.btn_add_wish);
         myWish = findViewById(R.id.btn_my_wish);
-        deleteWish = findViewById(R.id.btn_delete_wish);
+
 
         myWish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), MyWish.class);
+                intent.putExtra("Account_ID", accID);
+                startActivity(intent);
+            }
+        });
+
+        addWish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AddWish.class);
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }

@@ -2,6 +2,7 @@ package com.qcb.financemanage.payments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,14 +18,14 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.qcb.financemanage.R;
 
-public class CommunalePaymentActivity extends AppCompatActivity {
+public class GamesPaymentTransaction extends AppCompatActivity {
 
     EditText amountOfMoneyToPay;
     Button btnPay;
-    String providerName;
+    TextView gameOperatorName;
+    String gameName;
 
     String accID;
-    String type, pay_for;
 
     private FirebaseFirestore db;
     private DocumentReference docRefforAccount;
@@ -33,28 +34,25 @@ public class CommunalePaymentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_communale_payment);
+        setContentView(R.layout.games_payment_transaction);
 
         db = FirebaseFirestore.getInstance();
         accounts = db.collection("accounts");
 
         Intent intent = getIntent();
-        providerName = intent.getStringExtra("PROVIDER");
-        accID = intent.getStringExtra("Account_ID");
+        gameName = intent.getStringExtra("GAME");
 
-        if(providerName != null){
-            pay_for = providerName;
-            type = "Internet";
-        } else {
-            pay_for = "Communale";
-            type = "Communale";
-        }
+        Log.e("GAME", "Game name is: " + gameName);
+        accID = intent.getStringExtra("Account_ID");
 
         //Log.e("ACC_ID", accID);
         //System.out.println("!!!!!!!!!!!!!!!!!!!!!!! ACCOUNT ID IS: " + accID + "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-        amountOfMoneyToPay = findViewById(R.id.com);
-        btnPay = findViewById(R.id.btncom);
+        amountOfMoneyToPay = findViewById(R.id.games_pay_trans_vvedite_summu);
+        btnPay = findViewById(R.id.btn_games_trans_pay);
+        gameOperatorName = findViewById(R.id.text_view_games_trans_operator_name);
+
+        gameOperatorName.setText(gameName);
 
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +76,12 @@ public class CommunalePaymentActivity extends AppCompatActivity {
                             // If Payment is successful, open a new activity
                             @Override
                             public void onSuccess(Object o) {
+
+                                //Log.e("AMOUNTOPAY", "Amount to pay is: " + amountToPay);
                                 Intent intent = new Intent(getApplicationContext(), PaymentOperationResult.class);
                                 intent.putExtra("payer", accID);
-                                intent.putExtra("pay_for", pay_for);
-                                intent.putExtra("type", type);
+                                intent.putExtra("pay_for", gameName);
+                                intent.putExtra("type", "Games");
                                 intent.putExtra("amount", amountToPay);
                                 intent.putExtra("payer_id", accID);
                                 startActivity(intent);

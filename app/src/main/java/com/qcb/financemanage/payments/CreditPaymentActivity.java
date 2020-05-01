@@ -58,7 +58,7 @@ public class CreditPaymentActivity extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                         Long currentBalance = documentSnapshot.getLong("balance");              // Get current balance
-                        Long amountToPay = Long.parseLong(amountOfMoneyToPay.getText().toString());  // Get amount of payment
+                        final Long amountToPay = Long.parseLong(amountOfMoneyToPay.getText().toString());  // Get amount of payment
                         currentBalance -= amountToPay;                                               // Update current balance
 
                         /* Update the balance in the database */
@@ -69,6 +69,11 @@ public class CreditPaymentActivity extends AppCompatActivity {
                             @Override
                             public void onSuccess(Object o) {
                                 Intent intent = new Intent(getApplicationContext(), PaymentOperationResult.class);
+                                intent.putExtra("payer", accID);
+                                intent.putExtra("pay_for", "Credit");
+                                intent.putExtra("type", "Credit");
+                                intent.putExtra("amount", amountToPay);
+                                intent.putExtra("payer_id", accID);
                                 startActivity(intent);
                             }
                         });

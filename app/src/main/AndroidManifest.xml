@@ -172,6 +172,25 @@
 
         </activity>
 
+
+        <!-- Games activity -->
+        <activity android:name=".payments.GamesPaymentActivity"
+            android:parentActivityName=".PaymentsActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".PaymentsActivity" />
+
+        </activity>
+        <activity android:name=".payments.GamesPaymentTransaction"
+            android:parentActivityName=".payments.GamesPaymentActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".payments.GamesPaymentActivity" />
+
+        </activity>
+
         <!-- =================================== PIGGY BANK STUFF ================================= -->
         <activity android:name=".piggybank.PiggyBank"
             android:parentActivityName=".Authorization">
@@ -182,6 +201,14 @@
 
         </activity>
         <activity android:name=".piggybank.MyWish"
+            android:parentActivityName=".piggybank.PiggyBank">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".piggybank.PiggyBank" />
+
+        </activity>
+        <activity android:name=".piggybank.AddWish"
             android:parentActivityName=".piggybank.PiggyBank">
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
