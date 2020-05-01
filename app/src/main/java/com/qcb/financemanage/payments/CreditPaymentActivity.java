@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,7 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.qcb.financemanage.R;
 
-public class CommunalePaymentActivity extends AppCompatActivity {
+public class CreditPaymentActivity extends AppCompatActivity {
 
     EditText amountOfMoneyToPay;
     Button btnPay;

@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".payments.CreditPaymentActivity"></activity>
+        <activity android:name=".payments.FoodPaymentActivity" />
+        <activity android:name=".payments.InternetPaymentActivity" />
+        <activity android:name=".payments.CommunalePaymentActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -185,6 +189,7 @@
                 android:value=".piggybank.PiggyBank" />
 
         </activity>
+
 
 
 

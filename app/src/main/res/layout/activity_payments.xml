@@ -18,20 +18,17 @@
         android:layout_width="133dp"
         android:layout_height="85dp"
         android:layout_marginEnd="48dp"
-        android:text="Communal"
+        android:text="@string/communal"
         app:layout_constraintBottom_toTopOf="@+id/pay_food"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
         android:id="@+id/pay_telephone"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="133dp"
         android:layout_height="85dp"
         android:layout_marginStart="48dp"
-        android:background="#FF5722"
         android:text="@string/mobile"
-        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/pay_internet"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />

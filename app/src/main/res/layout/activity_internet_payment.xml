@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".payments.InternetPaymentActivity">
+    <Button
+        android:id="@+id/kazakhtelecom"
+        android:layout_width="127dp"
+        android:layout_height="119dp"
+        android:text="Kazakhtelecom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/beeline"
+        app:layout_constraintTop_toBottomOf="@+id/Altel_4G" />
 
+    <Button
+        android:id="@+id/beeline"
+        android:layout_width="127dp"
+        android:layout_height="119dp"
+        android:text="Beeline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/kazakhtelecom"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/megaline" />
+
+    <Button
+        android:id="@+id/Altel_4G"
+        android:layout_width="127dp"
+        android:layout_height="119dp"
+        android:text="Altel_4G"
+        app:layout_constraintBottom_toTopOf="@+id/kazakhtelecom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/megaline"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="Choose Your Internet Provider"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/megaline"
+        android:layout_width="127dp"
+        android:layout_height="119dp"
+        android:text="Megaline"
+        app:layout_constraintBottom_toTopOf="@+id/beeline"
+        app:layout_constraintEnd_toStartOf="@+id/Altel_4G"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>
