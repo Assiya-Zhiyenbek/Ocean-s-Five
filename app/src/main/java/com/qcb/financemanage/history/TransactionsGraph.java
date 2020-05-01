@@ -125,7 +125,7 @@ public class TransactionsGraph extends AppCompatActivity {
         xAxis.setValueFormatter(new IndexAxisValueFormatter(weekdays));
 
 
-        BarDataSet set = new BarDataSet(yvals, "Data Set Labels");
+        BarDataSet set = new BarDataSet(yvals, "Amount of money in $");
         set.setColors(ColorTemplate.MATERIAL_COLORS);
         set.setDrawValues(true);
         //mchart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisLables));

@@ -3,4 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="mobile">Mobile</string>
     <string name="communal">Communal</string>
+    <string name="this_graph_shows_a_summary">This graph shows a summary of \nall payments during the last 7 days</string>
+    <string name="thishh">This graph shows a summary of \nall payments during the last 7 days by category</string>
+    <string name="starttextlist">This graph shows a summary of \nall transactions during the last 7 days</string>
 </resources>

@@ -109,7 +109,7 @@ public class PaymentsChart extends AppCompatActivity {
             pieEntries.add(new PieEntry(moneySpentByCategory.get(cat), cat));
         }
 
-        PieDataSet dataSet = new PieDataSet(pieEntries, "Rainfall for fff");
+        PieDataSet dataSet = new PieDataSet(pieEntries, "Amount of money by category");
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData data = new PieData(dataSet);
 
