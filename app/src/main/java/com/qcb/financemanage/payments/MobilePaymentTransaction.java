@@ -2,6 +2,7 @@ package com.qcb.financemanage.payments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,7 +64,7 @@ public class MobilePaymentTransaction extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
 
                         Long currentBalance = documentSnapshot.getLong("balance");              // Get current balance
-                        Long amountToPay = Long.parseLong(amountOfMoneyToPay.getText().toString());  // Get amount of payment
+                        final Long amountToPay = Long.parseLong(amountOfMoneyToPay.getText().toString());  // Get amount of payment
                         currentBalance -= amountToPay;                                               // Update current balance
 
                         /* Update the balance in the database */
@@ -73,7 +74,14 @@ public class MobilePaymentTransaction extends AppCompatActivity {
                             // If Payment is successful, open a new activity
                             @Override
                             public void onSuccess(Object o) {
+
+                                Log.e("AMOUNTOPAY", "Amount to pay is: " + amountToPay);
                                 Intent intent = new Intent(getApplicationContext(), PaymentOperationResult.class);
+                                intent.putExtra("payer", accID);
+                                intent.putExtra("pay_for", operatorName);
+                                intent.putExtra("type", "Mobile");
+                                intent.putExtra("amount", amountToPay);
+                                intent.putExtra("payer_id", accID);
                                 startActivity(intent);
                             }
                         });

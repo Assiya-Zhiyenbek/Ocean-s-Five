@@ -6,9 +6,18 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.qcb.financemanage.R;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 public class PaymentOperationResult extends AppCompatActivity {
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +25,34 @@ public class PaymentOperationResult extends AppCompatActivity {
         setContentView(R.layout.payment_operation_result);
 
         Intent intent = getIntent();
+
+
+        String payer = intent.getStringExtra("payer");
+        String pay_for = intent.getStringExtra("pay_for");
+        String type = intent.getStringExtra("type");
+        String payer_id = intent.getStringExtra("payer_id");
+        long money =  intent.getLongExtra("amount", 0);
+        Date date = new Date();
+
+        Log.e("NEWLCASSSMONEY", "final amout is " + money);
+
+        // Update one field, creating the document if it does not already exist.
+        Map<String, Object> data = new HashMap<>();
+        data.put("payer", payer);
+        data.put("pay_for", pay_for);
+        data.put("payer_id", payer_id);
+        data.put("amount", money);
+        data.put("type", type);
+        data.put("date", date);
+
+
+        String uniqueID = "pmt_" + UUID.randomUUID().toString();
+
+        //Log.e("MONEY", "Money Amount to transfer: " + money);
+
+        db.collection("payments").document(uniqueID)
+                .set(data, SetOptions.merge());
+
 
     }
 }
