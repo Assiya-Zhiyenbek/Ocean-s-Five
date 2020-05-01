@@ -17,7 +17,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.qcb.financemanage.R;
 
-public class CommunalePaymentActivity extends AppCompatActivity {
+public class FoodPaymentActivity extends AppCompatActivity {
 
     EditText amountOfMoneyToPay;
     Button btnPay;

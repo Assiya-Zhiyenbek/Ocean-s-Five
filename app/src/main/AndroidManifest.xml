@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".payments.CreditPaymentActivity"></activity>
+        <activity android:name=".payments.FoodPaymentActivity" />
+        <activity android:name=".payments.InternetPaymentActivity" />
+        <activity android:name=".payments.CommunalePaymentActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -18,160 +22,160 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-
-        <!-- ================================================================================ -->
+        </activity> <!-- ================================================================================ -->
         <!-- Here are Four main Activities: MyBAnk, Payments, Transactions, History -->
-
-        <activity android:name=".MyBankActivity"
+        <activity
+            android:name=".MyBankActivity"
             android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".PaymentsActivity"
+        <activity
+            android:name=".PaymentsActivity"
             android:parentActivityName=".Authorization">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".TransactionsActivity"
+        <activity
+            android:name=".TransactionsActivity"
             android:parentActivityName=".Authorization">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Authorization" />
-        </activity>
-
-
-        <!-- ================================================================================ -->
+        </activity> <!-- ================================================================================ -->
         <!-- This is our authorization activity -->
-
-        <activity android:name=".Authorization"
+        <activity
+            android:name=".Authorization"
             android:parentActivityName=".MainActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
-        </activity>
-
-        <!-- ================================================================================ -->
-                        <!-- Everything related to the history -->
-
-        <activity android:name=".HistoryActivity"
+        </activity> <!-- ================================================================================ -->
+        <!-- Everything related to the history -->
+        <activity
+            android:name=".HistoryActivity"
             android:parentActivityName=".Authorization">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Authorization" />
         </activity>
-
-        <activity android:name=".history.TransactionsHistoryMain"
+        <activity
+            android:name=".history.TransactionsHistoryMain"
             android:parentActivityName=".HistoryActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HistoryActivity" />
         </activity>
-
-        <activity android:name=".history.PaymentsHistoryMain"
+        <activity
+            android:name=".history.PaymentsHistoryMain"
             android:parentActivityName=".HistoryActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".HistoryActivity" />
-        </activity>
-
-
-        <!-- ================================================================================ -->
+        </activity> <!-- ================================================================================ -->
         <!-- Everything related to the history and TRANSACTIONS ONLY -->
-
-        <activity android:name=".history.TransactionsList"
+        <activity
+            android:name=".history.TransactionsList"
             android:parentActivityName=".history.TransactionsHistoryMain">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".history.TransactionsHistoryMain" />
         </activity>
-
-        <activity android:name=".history.TransactionsGraph"
+        <activity
+            android:name=".history.TransactionsGraph"
             android:parentActivityName=".history.TransactionsHistoryMain">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".history.TransactionsHistoryMain" />
-        </activity>
-
-        <!-- ================================================================================ -->
+        </activity> <!-- ================================================================================ -->
         <!-- Everything related to the history and PAYMENTS ONLY -->
-
-        <activity android:name=".history.PaymentsChart"
+        <activity
+            android:name=".history.PaymentsChart"
             android:parentActivityName=".history.PaymentsHistoryMain">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".history.PaymentsHistoryMain" />
         </activity>
-
-        <activity android:name=".history.PaymentsList"
+        <activity
+            android:name=".history.PaymentsList"
             android:parentActivityName=".history.PaymentsHistoryMain">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".history.PaymentsHistoryMain" />
         </activity>
-
-        <activity android:name=".history.PaymentsGraph"
+        <activity
+            android:name=".history.PaymentsGraph"
             android:parentActivityName=".history.PaymentsHistoryMain">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".history.PaymentsHistoryMain" />
-        </activity>
-
-
-        <!-- ================================================================================ -->
-
-        <activity android:name=".TransactionResultActivity"
+        </activity> <!-- ================================================================================ -->
+        <activity
+            android:name=".TransactionResultActivity"
             android:parentActivityName=".TransactionsActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".TransactionsActivity" />
         </activity>
-        <activity android:name=".payments.MobilePaymentActivity"
+        <activity
+            android:name=".payments.MobilePaymentActivity"
             android:parentActivityName=".PaymentsActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".PaymentsActivity" />
         </activity>
-        <activity android:name=".payments.MobilePaymentTransaction"
+        <activity
+            android:name=".payments.MobilePaymentTransaction"
             android:parentActivityName=".payments.MobilePaymentActivity">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".payments.MobilePaymentActivity" />
-
-        </activity>
-
-        <!-- Result of payments -->
-        <activity android:name=".payments.PaymentOperationResult"
+        </activity> <!-- Result of payments -->
+        <activity
+            android:name=".payments.PaymentOperationResult"
             android:parentActivityName=".payments.MobilePaymentTransaction">
+
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".payments.MobilePaymentTransaction" />
-
         </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>

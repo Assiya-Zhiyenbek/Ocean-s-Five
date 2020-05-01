@@ -9,10 +9,10 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.qcb.financemanage.payments.CommunalePaymentActivity;
-import com.qcb.financemanage.payments.CreditsPaymentActivity;
-import com.qcb.financemanage.payments.FoodPaymentsActivity;
+import com.qcb.financemanage.payments.CreditPaymentActivity;
+import com.qcb.financemanage.payments.FoodPaymentActivity;
 import com.qcb.financemanage.payments.GamesPaymentActivity;
-import com.qcb.financemanage.payments.InternetPaymentsACtivity;
+import com.qcb.financemanage.payments.InternetPaymentActivity;
 import com.qcb.financemanage.payments.MobilePaymentActivity;
 
 public class PaymentsActivity extends AppCompatActivity {
@@ -53,9 +53,8 @@ public class PaymentsActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-
-                // Passing Account ID through Activities;
                 Intent intent = new Intent(getApplicationContext(), CommunalePaymentActivity.class);
+
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
@@ -66,8 +65,7 @@ public class PaymentsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                // Passing Account ID through Activities;
-                Intent intent = new Intent(getApplicationContext(), InternetPaymentsACtivity.class);
+                Intent intent = new Intent(getApplicationContext(), InternetPaymentActivity.class);
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
@@ -91,7 +89,7 @@ public class PaymentsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Passing Account ID through Activities;
-                Intent intent = new Intent(getApplicationContext(), CreditsPaymentActivity.class);
+                Intent intent = new Intent(getApplicationContext(), CreditPaymentActivity.class);
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
@@ -103,7 +101,8 @@ public class PaymentsActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Passing Account ID through Activities;
-                Intent intent = new Intent(getApplicationContext(), FoodPaymentsActivity.class);
+                Intent intent = new Intent(getApplicationContext(), FoodPaymentActivity.class);
+
                 intent.putExtra("Account_ID", accID);
                 startActivity(intent);
             }
